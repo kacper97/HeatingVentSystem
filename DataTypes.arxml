@@ -15,7 +15,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <DATA-TYPE-MAPS>
                 <DATA-TYPE-MAP>
                   <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/DataTypes/speed</APPLICATION-DATA-TYPE-REF>
-                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/sint16</IMPLEMENTATION-DATA-TYPE-REF>
                 </DATA-TYPE-MAP>
               </DATA-TYPE-MAPS>
             </DATA-TYPE-MAPPING-SET>

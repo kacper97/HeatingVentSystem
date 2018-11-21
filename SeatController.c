@@ -71,7 +71,7 @@
  *   Explicit S/R API:
  *   -----------------
  *   Std_ReturnType Rte_Read_SeatsOnOff_boolean(boolean *data)
- *   Std_ReturnType Rte_Read_speedIn_speed(uint8 *data)
+ *   Std_ReturnType Rte_Read_speedIn_speed(sint16 *data)
  *
  * Output Interfaces:
  * ==================
@@ -96,13 +96,25 @@ FUNC(void, SeatController_CODE) run(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
  * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
  * Symbol: run
  *********************************************************************************************************************/
-sint16 speed
-boolean SeatController
-if (speed <10 )
-	SeatController =FALSE
+sint16 speed;
+boolean SeatController;
+Std_ReturnType retVal;
+(void) Rte_Read_PpSpeed_SeatController(self, &speed);
+(void) Rte_Call_PpGetSpeedStatusIoHwAb_IoHwAb_Get_SeatController(self, &SeatController);
+
+// if speed is less than 10, don't heat seats
+if (speed < 10 )
+{
+	        Rte_Call_PpSpeed_SeatController_SetEventStatus(self, DEM_EVENT_STATUS_FAILED);
+            retVal = Rte_Call_PpSetSpeedStateIoHwAb_IoHwAb_Set_Pwm_Signals(self, 0);
+}
 else
-	SeatController =TRUE
- 
+{
+        Rte_Call_PpSpeed_SeatController_SetEventStatus(self, DEM_EVENT_STATUS_PASSED);
+        retVal = Rte_Call_PpSetSpeedStateIoHwAb_IoHwAb_Set_Pwm_Signals(self, (sin16)speed);
+}
+    (void)self;
+
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/

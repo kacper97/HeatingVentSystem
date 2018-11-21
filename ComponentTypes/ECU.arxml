@@ -716,6 +716,8 @@ This file was saved with a tool from Vector Informatik GmbH
           <DATA-TYPE-MAPPING-REFS>
             <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
             <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
+            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
+            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
           </DATA-TYPE-MAPPING-REFS>
         </COMPOSITION-SW-COMPONENT-TYPE>
       </ELEMENTS>

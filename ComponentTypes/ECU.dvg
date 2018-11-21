@@ -676,7 +676,7 @@
 					<Attributes>
 						<Attribute>
 							<Key>StructureGraphicSettings0000</Key>
-							<Value>6 Sheet1 1 1 0 85 85 52 0 0 3.175000 3.175000</Value>
+							<Value>6 Sheet1 1 1 0 85 85 -8 120 0 3.175000 3.175000</Value>
 						</Attribute>
 						<Attribute>
 							<Key>VehicleProjectWindowStatus</Key>
