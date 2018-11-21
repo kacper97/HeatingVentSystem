@@ -8,7 +8,7 @@ This file was saved with a tool from Vector Informatik GmbH
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="C8F9DBAB-78A3-4C55-B372-5181E4853DA6">
-          <SHORT-NAME>CabinTempClosedLoopAtomic</SHORT-NAME>
+          <SHORT-NAME>CabinTempClosedLoopIn</SHORT-NAME>
           <PORTS>
             <P-PORT-PROTOTYPE UUID="98A33494-D46F-477D-9E5E-608577EC36C6">
               <SHORT-NAME>tempObt</SHORT-NAME>
@@ -42,26 +42,26 @@ This file was saved with a tool from Vector Informatik GmbH
           </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="682CE168-5939-4B87-B11A-47869D3DE54D">
-              <SHORT-NAME>CabinTempClosedLoopAtomic_InternalBehavior</SHORT-NAME>
+              <SHORT-NAME>CabinTempClosedLoopIn_InternalBehavior</SHORT-NAME>
               <DATA-TYPE-MAPPING-REFS>
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/tempMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
                 <TIMING-EVENT UUID="F7F2FCD1-BA8B-4D45-8CAC-C51B348D17FD">
                   <SHORT-NAME>TMT_run</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempClosedLoopAtomic/CabinTempClosedLoopAtomic_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempClosedLoopIn/CabinTempClosedLoopIn_InternalBehavior/pollTemp</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="7242322C-9823-4557-A761-2E19C65E65D7">
-                  <SHORT-NAME>run</SHORT-NAME>
+                  <SHORT-NAME>pollTemp</SHORT-NAME>
                   <DATA-SEND-POINTS>
                     <VARIABLE-ACCESS UUID="A28DA9F0-C3AC-4DEC-8FE2-D4F4FED5F6AB">
                       <SHORT-NAME>SEND_tempObt_tempIn</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopIn/tempObt</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -70,7 +70,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>SEND_tempObt_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopIn/tempObt</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -82,8 +82,8 @@ This file was saved with a tool from Vector Informatik GmbH
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
         <SWC-IMPLEMENTATION UUID="2B6EB80D-882C-4EDF-9820-5B106D4D1B36">
-          <SHORT-NAME>CabinTempClosedLoopAtomic_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/CabinTempClosedLoopAtomic/CabinTempClosedLoopAtomic_InternalBehavior</BEHAVIOR-REF>
+          <SHORT-NAME>CabinTempClosedLoopIn_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/CabinTempClosedLoopIn/CabinTempClosedLoopIn_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

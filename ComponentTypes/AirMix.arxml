@@ -42,7 +42,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <EVENTS>
                 <DATA-RECEIVED-EVENT UUID="6864074C-5557-401C-ADB1-B476F2CDFE51">
                   <SHORT-NAME>DRT_flapsPosWrite_FlapSettingPercent_flapSettingPercent</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirMixOut/AirMixOut_InternalBehavior/flapsPosWrite</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirMixOut/AirMixOut_InternalBehavior/flapsPosRead</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/FlapSettingPercent</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnaloguePercent/flapSettingPercent</TARGET-DATA-ELEMENT-REF>
@@ -51,7 +51,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="DF147B6F-063D-45C4-9E49-8A659DB4F1EE">
-                  <SHORT-NAME>flapsPosWrite</SHORT-NAME>
+                  <SHORT-NAME>flapsPosRead</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="1BF5B20B-8F7B-4308-BD46-18E116F2C918">
                       <SHORT-NAME>REC_FlapSettingPercent_flapSettingPercent</SHORT-NAME>

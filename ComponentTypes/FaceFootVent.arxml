@@ -8,7 +8,7 @@ This file was saved with a tool from Vector Informatik GmbH
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="B18D7192-7294-442D-9EA4-D9400A1F1584">
-          <SHORT-NAME>FaceFootVentCtrl</SHORT-NAME>
+          <SHORT-NAME>FaceFootVentController</SHORT-NAME>
           <PORTS>
             <R-PORT-PROTOTYPE UUID="A3A9D315-0138-4CFC-9383-1ACB6E0E33CE">
               <SHORT-NAME>window</SHORT-NAME>
@@ -127,47 +127,47 @@ This file was saved with a tool from Vector Informatik GmbH
           </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="E054806C-EC67-40FC-B6AF-58DFB2992134">
-              <SHORT-NAME>FaceFootVentCtrl_InternalBehavior</SHORT-NAME>
+              <SHORT-NAME>FaceFootVentController_InternalBehavior</SHORT-NAME>
               <EVENTS>
                 <DATA-RECEIVED-EVENT UUID="649E1327-6C48-4DD3-8439-C4B4C4EAF70D">
                   <SHORT-NAME>DRT_run_face_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentCtrl/FaceFootVentCtrl_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentController/FaceFootVentController_InternalBehavior/windBlowDir</START-ON-EVENT-REF>
                   <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/face</CONTEXT-R-PORT-REF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/face</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
                 <DATA-RECEIVED-EVENT UUID="26567953-1020-4BF5-BE2F-4283D7467F71">
                   <SHORT-NAME>DRT_run_foot_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentCtrl/FaceFootVentCtrl_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentController/FaceFootVentController_InternalBehavior/windBlowDir</START-ON-EVENT-REF>
                   <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/foot</CONTEXT-R-PORT-REF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/foot</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
                 <DATA-RECEIVED-EVENT UUID="2AF66253-3EDF-4B21-B2AE-22FEF10E7861">
                   <SHORT-NAME>DRT_run_window_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentCtrl/FaceFootVentCtrl_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentController/FaceFootVentController_InternalBehavior/windBlowDir</START-ON-EVENT-REF>
                   <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/window</CONTEXT-R-PORT-REF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/window</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
                 <TIMING-EVENT UUID="B065252D-05BA-4068-BF99-F0165E076386">
                   <SHORT-NAME>TMT_run</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentCtrl/FaceFootVentCtrl_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/FaceFootVentController/FaceFootVentController_InternalBehavior/windBlowDir</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="914E7570-67D8-45E1-9A40-40BE1E54A006">
-                  <SHORT-NAME>run</SHORT-NAME>
+                  <SHORT-NAME>windBlowDir</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="F24CFA40-EBA2-4409-AC80-DB56C09F05E0">
                       <SHORT-NAME>REC_face_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/face</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/face</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -176,7 +176,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>REC_foot_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/foot</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/foot</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -185,7 +185,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>REC_window_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/window</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/window</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -196,7 +196,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>SEND_faceOut_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/faceOut</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/faceOut</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -205,7 +205,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>SEND_footOut_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/footOut</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/footOut</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -214,7 +214,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>SEND_windowOut_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/windowOut</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/windowOut</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -226,8 +226,8 @@ This file was saved with a tool from Vector Informatik GmbH
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
         <SWC-IMPLEMENTATION UUID="54E2E30F-D84A-4432-A43D-DAACDA5126E8">
-          <SHORT-NAME>FaceFootVentCtrl_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/FaceFootVentCtrl/FaceFootVentCtrl_InternalBehavior</BEHAVIOR-REF>
+          <SHORT-NAME>FaceFootVentController_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/FaceFootVentController/FaceFootVentController_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

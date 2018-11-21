@@ -37,18 +37,21 @@ This file was saved with a tool from Vector Informatik GmbH
             <SWC-INTERNAL-BEHAVIOR UUID="B403A976-8601-48C7-BF58-74AD5AC48490">
               <SHORT-NAME>Ignition_InternalBehavior</SHORT-NAME>
               <EVENTS>
-                <DATA-RECEIVED-EVENT UUID="695CAEA7-B098-4505-BBFC-E9B0F3820298">
-                  <SHORT-NAME>DRT_ignitionPoll_MotorOnOff_boolean</SHORT-NAME>
+                <INIT-EVENT UUID="91E633A4-6529-445E-98B3-5E6D7DA90DDD">
+                  <SHORT-NAME>ignitionPoll_InitEvent</SHORT-NAME>
                   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Ignition/Ignition_InternalBehavior/ignitionPoll</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/Ignition/MotorOnOff</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
+                </INIT-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="6129864A-A297-4C12-9C5C-5FD4D6BDBE7A">
                   <SHORT-NAME>ignitionPoll</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:RunnableKind">
+                        <SD>InitRunnable</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="A9B4F6EC-70B1-425C-BA34-1810D99A8D51">
                       <SHORT-NAME>REC_MotorOnOff_boolean</SHORT-NAME>

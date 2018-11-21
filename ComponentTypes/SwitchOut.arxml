@@ -39,7 +39,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <EVENTS>
                 <DATA-RECEIVED-EVENT UUID="789DC70D-4E17-4518-B934-1BB99F11CF4F">
                   <SHORT-NAME>DRT_switch_switchIn_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/SwitchOut/SwitchOut_InternalBehavior/switch</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/SwitchOut/SwitchOut_InternalBehavior/readSwitchvalue</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SwitchOut/switchIn</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
@@ -48,7 +48,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="04CDB11D-CA35-42D4-B7FC-A6EA7C653A6E">
-                  <SHORT-NAME>switch</SHORT-NAME>
+                  <SHORT-NAME>readSwitchvalue</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="A1F7F545-2962-41F8-B0E6-4404732A7D45">
                       <SHORT-NAME>REC_switchIn_boolean</SHORT-NAME>

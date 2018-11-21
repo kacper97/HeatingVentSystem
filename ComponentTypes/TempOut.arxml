@@ -10,7 +10,7 @@ This file was saved with a tool from Vector Informatik GmbH
         <APPLICATION-SW-COMPONENT-TYPE UUID="E954AD76-ACEC-4BC6-B4C9-7777A217C03E">
           <SHORT-NAME>TempOut</SHORT-NAME>
           <PORTS>
-            <R-PORT-PROTOTYPE UUID="D10D5A6F-D5BA-451F-AC53-37D9895CB87A">
+            <R-PORT-PROTOTYPE UUID="2602842A-C381-4DA9-B332-13C1FA5532A4">
               <SHORT-NAME>temp</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
@@ -21,7 +21,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <REQUIRED-COM-SPECS>
                 <NONQUEUED-RECEIVER-COM-SPEC>
-                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
                   <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
                   <INIT-VALUE>
                     <NUMERICAL-VALUE-SPECIFICATION>
@@ -30,7 +30,7 @@ This file was saved with a tool from Vector Informatik GmbH
                   </INIT-VALUE>
                 </NONQUEUED-RECEIVER-COM-SPEC>
                 <NONQUEUED-RECEIVER-COM-SPEC>
-                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
                   <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
                   <INIT-VALUE>
                     <NUMERICAL-VALUE-SPECIFICATION>
@@ -49,21 +49,29 @@ This file was saved with a tool from Vector Informatik GmbH
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/tempMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
-                <DATA-RECEIVED-EVENT UUID="5277D894-C121-40C0-B0F3-B8C79CD10007">
-                  <SHORT-NAME>DRT_ReadTemp_temp_tempIn</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/TempOut/TempOut_InternalBehavior/ReadWriteTemp</START-ON-EVENT-REF>
+                <DATA-RECEIVED-EVENT UUID="760A9E2F-0D57-428B-825E-21973223A1C1">
+                  <SHORT-NAME>DRT_Runnable_TempAnaloguePort_tempIn</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/TempOut/TempOut_InternalBehavior/Runnable</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
+                <DATA-RECEIVED-EVENT UUID="D048DAB1-1E0A-4254-871D-AC7E642F1879">
+                  <SHORT-NAME>DRT_Runnable_TempAnaloguePort_tempOut</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/TempOut/TempOut_InternalBehavior/Runnable</START-ON-EVENT-REF>
+                  <DATA-IREF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</CONTEXT-R-PORT-REF>
+                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-ELEMENT-REF>
+                  </DATA-IREF>
+                </DATA-RECEIVED-EVENT>
               </EVENTS>
               <RUNNABLES>
-                <RUNNABLE-ENTITY UUID="9DF6EB6B-1CB2-4361-B201-125A2453C226">
-                  <SHORT-NAME>ReadWriteTemp</SHORT-NAME>
+                <RUNNABLE-ENTITY UUID="BCBB8F07-6A6C-42BF-A10F-F9E8E8010B42">
+                  <SHORT-NAME>Runnable</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
-                    <VARIABLE-ACCESS UUID="2D7F4F2C-603B-4597-8668-F4805B18505F">
-                      <SHORT-NAME>REC_temp_tempIn</SHORT-NAME>
+                    <VARIABLE-ACCESS UUID="372F0527-C245-41B3-A080-010E6D707802">
+                      <SHORT-NAME>REC_TempAnaloguePort_tempIn</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
                           <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</PORT-PROTOTYPE-REF>
@@ -71,8 +79,8 @@ This file was saved with a tool from Vector Informatik GmbH
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="4275605F-107B-47D1-B104-63F2806A19E0">
-                      <SHORT-NAME>REC_temp_tempOut</SHORT-NAME>
+                    <VARIABLE-ACCESS UUID="0A4047D3-EF16-46CC-A0D0-168E7B64A445">
+                      <SHORT-NAME>REC_TempAnaloguePort_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
                           <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</PORT-PROTOTYPE-REF>

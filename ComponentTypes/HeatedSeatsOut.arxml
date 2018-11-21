@@ -39,7 +39,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <EVENTS>
                 <DATA-RECEIVED-EVENT UUID="31962EE6-EFE6-47B1-909F-F25D353ABBF9">
                   <SHORT-NAME>DRT_readWriteheatedSeats_heatedSeatsOnOff_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/HeatedSeatsOut/HeatedSeatsOut_InternalBehavior/readWriteheatedSeats</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/HeatedSeatsOut/HeatedSeatsOut_InternalBehavior/readheatedSeatsStatus</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatedSeatsOut/heatedSeatsOnOff</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
@@ -48,7 +48,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="ACC09A13-16B9-4EF4-A3DA-A9EC121C0095">
-                  <SHORT-NAME>readWriteheatedSeats</SHORT-NAME>
+                  <SHORT-NAME>readheatedSeatsStatus</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="10F7FEA0-BD42-4CA7-8F2A-042FD0F73F5D">
                       <SHORT-NAME>REC_heatedSeatsOnOff_boolean</SHORT-NAME>

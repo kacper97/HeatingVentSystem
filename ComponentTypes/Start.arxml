@@ -8,7 +8,7 @@ This file was saved with a tool from Vector Informatik GmbH
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="7759673F-9398-475C-9DC0-9E1FCBF9B4B7">
-          <SHORT-NAME>Start</SHORT-NAME>
+          <SHORT-NAME>APStart</SHORT-NAME>
           <PORTS>
             <R-PORT-PROTOTYPE UUID="775A8CD5-9241-44CF-B4DD-5E1CD92964EC">
               <SHORT-NAME>ignition</SHORT-NAME>
@@ -57,18 +57,18 @@ This file was saved with a tool from Vector Informatik GmbH
           </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="D374557E-425D-47E2-8109-0668620FA658">
-              <SHORT-NAME>Start_InternalBehavior</SHORT-NAME>
+              <SHORT-NAME>APStart_InternalBehavior</SHORT-NAME>
               <DATA-TYPE-MAPPING-REFS>
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
                 <INIT-EVENT UUID="DD61D329-8F8D-4DE9-8304-6304E96180EB">
                   <SHORT-NAME>SpeedPoll_InitEvent</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Start/Start_InternalBehavior/SpeedInit</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/APStart/APStart_InternalBehavior/SpeedInit</START-ON-EVENT-REF>
                 </INIT-EVENT>
                 <INIT-EVENT UUID="60F5DC71-47C5-49FD-9323-FA88F9EBEB91">
                   <SHORT-NAME>ignition_InitEvent</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Start/Start_InternalBehavior/ignition</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/APStart/APStart_InternalBehavior/ignition</START-ON-EVENT-REF>
                 </INIT-EVENT>
               </EVENTS>
               <PORT-API-OPTIONS>
@@ -76,13 +76,13 @@ This file was saved with a tool from Vector Informatik GmbH
                   <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
                   <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
                   <INDIRECT-API>true</INDIRECT-API>
-                  <PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/Start/ignition</PORT-REF>
+                  <PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APStart/ignition</PORT-REF>
                 </PORT-API-OPTION>
                 <PORT-API-OPTION>
                   <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
                   <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
                   <INDIRECT-API>true</INDIRECT-API>
-                  <PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/Start/speed</PORT-REF>
+                  <PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APStart/speed</PORT-REF>
                 </PORT-API-OPTION>
               </PORT-API-OPTIONS>
               <RUNNABLES>
@@ -100,7 +100,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>REC_speed_speed</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/Start/speed</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APStart/speed</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -121,7 +121,7 @@ This file was saved with a tool from Vector Informatik GmbH
                       <SHORT-NAME>REC_ignition_boolean</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/Start/ignition</PORT-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APStart/ignition</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
@@ -133,8 +133,8 @@ This file was saved with a tool from Vector Informatik GmbH
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
         <SWC-IMPLEMENTATION UUID="5DC6FCFD-1802-4623-B010-1F9ED4EAEE1D">
-          <SHORT-NAME>Start_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/Start/Start_InternalBehavior</BEHAVIOR-REF>
+          <SHORT-NAME>APStart_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/APStart/APStart_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

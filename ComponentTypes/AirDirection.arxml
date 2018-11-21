@@ -87,7 +87,7 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/FaceFootVentCtrl</TYPE-TREF>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/FaceFootVentController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
@@ -96,7 +96,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/window</TARGET-R-PORT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/window</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/windowSet</OUTER-PORT-REF>
@@ -106,7 +106,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/foot</TARGET-R-PORT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/foot</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/foot</OUTER-PORT-REF>
@@ -116,7 +116,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/face</TARGET-R-PORT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/face</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/face</OUTER-PORT-REF>
@@ -126,7 +126,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/faceOut</TARGET-P-PORT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/faceOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/FaceButtonOut</OUTER-PORT-REF>
@@ -136,7 +136,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/windowOut</TARGET-P-PORT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/windowOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/WindowButtonOut</OUTER-PORT-REF>
@@ -146,7 +146,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/footOut</TARGET-P-PORT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentController/footOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/footButtonOut</OUTER-PORT-REF>

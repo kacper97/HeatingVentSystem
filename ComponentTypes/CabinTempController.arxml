@@ -109,49 +109,25 @@ This file was saved with a tool from Vector Informatik GmbH
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/tempMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
-                <DATA-RECEIVED-EVENT UUID="C80F9C2A-885C-440B-9148-A5C76499AE9A">
-                  <SHORT-NAME>DRT_Run_currentTemp_tempIn</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/Run</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/currentTemp</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
-                <DATA-RECEIVED-EVENT UUID="F6763DAA-23E7-45D0-8692-A20F291F7364">
-                  <SHORT-NAME>DRT_Run_currentTemp_tempOut</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/Run</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/currentTemp</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
-                <DATA-RECEIVED-EVENT UUID="8444576F-5855-4A92-9915-92EF389054F6">
-                  <SHORT-NAME>DRT_Run_setTemp_tempIn</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/Run</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/setTemp</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
-                <DATA-RECEIVED-EVENT UUID="23FB4C01-1DC2-4471-92EB-B517D785B79B">
-                  <SHORT-NAME>DRT_Run_setTemp_tempOut</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/Run</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/setTemp</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
-                <TIMING-EVENT UUID="FFB3359A-B4AD-4D6B-95A2-9D74FAD1EFE3">
-                  <SHORT-NAME>TMT_Run</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/Run</START-ON-EVENT-REF>
+                <TIMING-EVENT UUID="E795B9A7-86E8-41E3-A069-D3A2801FEA65">
+                  <SHORT-NAME>TMT_TempControl</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/TempControl</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
+                <DATA-RECEIVED-EVENT UUID="38065278-67A0-4BA1-B06F-86DF72CD9D5B">
+                  <SHORT-NAME>DRT_TempControl_setTemp_tempIn</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempController/CabinTempController_InternalBehavior/TempControl</START-ON-EVENT-REF>
+                  <DATA-IREF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/setTemp</CONTEXT-R-PORT-REF>
+                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-ELEMENT-REF>
+                  </DATA-IREF>
+                </DATA-RECEIVED-EVENT>
               </EVENTS>
               <RUNNABLES>
-                <RUNNABLE-ENTITY UUID="890687B7-33EB-4FAC-B3F3-3550B5B2169A">
-                  <SHORT-NAME>Run</SHORT-NAME>
+                <RUNNABLE-ENTITY UUID="835B29EB-7AD4-4B33-9AAF-B50549CD709E">
+                  <SHORT-NAME>TempControl</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
-                    <VARIABLE-ACCESS UUID="C27D433E-0CBB-4F15-8509-F8FB0485D202">
+                    <VARIABLE-ACCESS UUID="437581ED-D732-417D-935E-74226DD107F2">
                       <SHORT-NAME>REC_currentTemp_tempIn</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
@@ -160,7 +136,7 @@ This file was saved with a tool from Vector Informatik GmbH
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="EF94AC0D-B0CE-4E15-8C76-EE6DD356C992">
+                    <VARIABLE-ACCESS UUID="3C66E3DA-D304-4CEF-B11A-303A822989DB">
                       <SHORT-NAME>REC_currentTemp_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
@@ -169,7 +145,7 @@ This file was saved with a tool from Vector Informatik GmbH
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="CAA3DBD2-E769-4992-86E2-3A4AF08FC2C8">
+                    <VARIABLE-ACCESS UUID="15E86316-5B5A-4C83-BB98-8A67308934F5">
                       <SHORT-NAME>REC_setTemp_tempIn</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
@@ -178,7 +154,7 @@ This file was saved with a tool from Vector Informatik GmbH
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="C3188BEC-C247-4A89-93B4-485A5E45CC16">
+                    <VARIABLE-ACCESS UUID="76BC8317-4BEA-4843-9F73-FB00BBA44BEF">
                       <SHORT-NAME>REC_setTemp_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
@@ -189,21 +165,21 @@ This file was saved with a tool from Vector Informatik GmbH
                     </VARIABLE-ACCESS>
                   </DATA-RECEIVE-POINT-BY-ARGUMENTS>
                   <DATA-SEND-POINTS>
-                    <VARIABLE-ACCESS UUID="D5C13B10-3C06-44B8-8DFA-EAD8DAB466AE">
-                      <SHORT-NAME>SEND_tempOut_tempIn</SHORT-NAME>
-                      <ACCESSED-VARIABLE>
-                        <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/tempOut</PORT-PROTOTYPE-REF>
-                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-PROTOTYPE-REF>
-                        </AUTOSAR-VARIABLE-IREF>
-                      </ACCESSED-VARIABLE>
-                    </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="6D8E9284-ED95-41A3-8AF8-A00F6BA8AE2F">
+                    <VARIABLE-ACCESS UUID="543CC41F-DD83-4D9D-ACEF-1E7AD6FD7AE6">
                       <SHORT-NAME>SEND_tempOut_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
                           <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/tempOut</PORT-PROTOTYPE-REF>
                           <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS UUID="7EC290D8-75E2-4758-B1AC-E7415CE8ED00">
+                      <SHORT-NAME>SEND_tempOut_tempIn</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/tempOut</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>

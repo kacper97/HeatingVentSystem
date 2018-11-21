@@ -49,13 +49,13 @@ This file was saved with a tool from Vector Informatik GmbH
               <EVENTS>
                 <TIMING-EVENT UUID="1EF507AF-21DE-4F7B-B9BF-40177E2C71F2">
                   <SHORT-NAME>TMT_Write</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Temp/Temp_InternalBehavior/Write</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Temp/Temp_InternalBehavior/writeTemp</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="78D6704D-06E1-4168-8456-0CEDCBA5BB22">
-                  <SHORT-NAME>Write</SHORT-NAME>
+                  <SHORT-NAME>writeTemp</SHORT-NAME>
                   <DATA-SEND-POINTS>
                     <VARIABLE-ACCESS UUID="9CC8D455-81F0-4375-B705-450F15EE9C6A">
                       <SHORT-NAME>SEND_temp_tempOut</SHORT-NAME>

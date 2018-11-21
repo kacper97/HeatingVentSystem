@@ -56,25 +56,24 @@ This file was saved with a tool from Vector Informatik GmbH
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
-                <DATA-RECEIVED-EVENT UUID="0A4984B2-BA01-4A8A-84AE-5EBDFC55EC87">
-                  <SHORT-NAME>DRT_run_airBlowIn_speed</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirBlowController/AirBlowController_InternalBehavior/run</START-ON-EVENT-REF>
+                <DATA-RECEIVED-EVENT UUID="F262674F-6817-4FD6-9E91-E110504B6F49">
+                  <SHORT-NAME>DRT_readWriteMotor_airBlowIn_speed</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirBlowController/AirBlowController_InternalBehavior/readWriteMotor</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirBlowController/airBlowIn</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
-                <TIMING-EVENT UUID="95775764-608F-42C3-9752-5283C28468E7">
-                  <SHORT-NAME>TMT_run</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirBlowController/AirBlowController_InternalBehavior/run</START-ON-EVENT-REF>
-                  <PERIOD>0.02</PERIOD>
-                </TIMING-EVENT>
+                <INIT-EVENT UUID="9FAEAD41-AE1A-48F1-B60A-053FBAD74A44">
+                  <SHORT-NAME>AirBlowController_InitEvent</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirBlowController/AirBlowController_InternalBehavior/initAirBlow</START-ON-EVENT-REF>
+                </INIT-EVENT>
               </EVENTS>
               <RUNNABLES>
-                <RUNNABLE-ENTITY UUID="A62B9F36-0BEB-4BD1-BC37-AEB1C2E635CE">
-                  <SHORT-NAME>run</SHORT-NAME>
+                <RUNNABLE-ENTITY UUID="3906822B-C445-4837-BF26-7040E3FB2A90">
+                  <SHORT-NAME>readWriteMotor</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
-                    <VARIABLE-ACCESS UUID="36CEA8C9-A327-47BC-80ED-73E404BF4686">
+                    <VARIABLE-ACCESS UUID="1BE22B83-7D22-481C-9C45-9553B689133D">
                       <SHORT-NAME>REC_airBlowIn_speed</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
@@ -85,7 +84,39 @@ This file was saved with a tool from Vector Informatik GmbH
                     </VARIABLE-ACCESS>
                   </DATA-RECEIVE-POINT-BY-ARGUMENTS>
                   <DATA-SEND-POINTS>
-                    <VARIABLE-ACCESS UUID="E558174C-AF38-4058-9244-16B7A06E5D65">
+                    <VARIABLE-ACCESS UUID="2E32BBC1-A4B6-4F5F-BE5C-86C50DED5333">
+                      <SHORT-NAME>SEND_AirBlowOut_speed</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirBlowController/AirBlowOut</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="C2E8357E-36A8-4B7B-8658-04583B0364AD">
+                  <SHORT-NAME>initAirBlow</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:RunnableKind">
+                        <SD>InitRunnable</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="AD925E7D-B0D9-41FE-BD2C-48FD3DB65B37">
+                      <SHORT-NAME>REC_airBlowIn_speed</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirBlowController/airBlowIn</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="308290B2-2C4D-4842-86DF-D390AF0511EC">
                       <SHORT-NAME>SEND_AirBlowOut_speed</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>

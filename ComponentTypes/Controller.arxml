@@ -85,24 +85,16 @@ This file was saved with a tool from Vector Informatik GmbH
               <EVENTS>
                 <DATA-RECEIVED-EVENT UUID="097BD7D3-9E96-44BB-AF6A-198061ADAC1F">
                   <SHORT-NAME>DRT_run_SeatsOnOff_boolean</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/SeatController/SeatController_InternalBehavior/run</START-ON-EVENT-REF>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/SeatController/SeatController_InternalBehavior/heatedSeatsRun</START-ON-EVENT-REF>
                   <DATA-IREF>
                     <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/SeatsOnOff</CONTEXT-R-PORT-REF>
                     <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/digitalIO/boolean</TARGET-DATA-ELEMENT-REF>
                   </DATA-IREF>
                 </DATA-RECEIVED-EVENT>
-                <DATA-RECEIVED-EVENT UUID="1234D955-8E0B-42A9-8563-0FA3BB9862BA">
-                  <SHORT-NAME>DRT_run_speedIn_speed</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/SeatController/SeatController_InternalBehavior/run</START-ON-EVENT-REF>
-                  <DATA-IREF>
-                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/speedIn</CONTEXT-R-PORT-REF>
-                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</TARGET-DATA-ELEMENT-REF>
-                  </DATA-IREF>
-                </DATA-RECEIVED-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="EFC63C0A-2EDC-4F90-B555-727AA4520BD0">
-                  <SHORT-NAME>run</SHORT-NAME>
+                  <SHORT-NAME>heatedSeatsRun</SHORT-NAME>
                   <DATA-RECEIVE-POINT-BY-ARGUMENTS>
                     <VARIABLE-ACCESS UUID="3D12CABC-7563-437C-ABC0-3454D3CAE0B5">
                       <SHORT-NAME>REC_SeatsOnOff_boolean</SHORT-NAME>

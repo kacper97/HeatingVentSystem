@@ -106,12 +106,12 @@ Std_ReturnType retVal;
 if (speed < 10 )
 {
 	        Rte_Call_PpSpeed_SeatController_SetEventStatus(self, DEM_EVENT_STATUS_FAILED);
-            retVal = Rte_Call_PpSetSpeedStateIoHwAb_IoHwAb_Set_Pwm_Signals(self, 0);
+            retVal = Rte_Call_PpSetSpeedStatusIoHwAb_IoHwAb_Set_Pwm_Signals(self, 0);
 }
 else
 {
         Rte_Call_PpSpeed_SeatController_SetEventStatus(self, DEM_EVENT_STATUS_PASSED);
-        retVal = Rte_Call_PpSetSpeedStateIoHwAb_IoHwAb_Set_Pwm_Signals(self, (sin16)speed);
+        retVal = Rte_Call_PpSetSpeedStatusIoHwAb_IoHwAb_Set_Pwm_Signals(self, (sin16)speed);
 }
     (void)self;
 

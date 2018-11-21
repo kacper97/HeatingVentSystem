@@ -44,12 +44,37 @@ This file was saved with a tool from Vector Informatik GmbH
                   <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirMixIn/AirMixIn_InternalBehavior/flapsPosPoll</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
+                <INIT-EVENT UUID="C4995D72-1C5A-4CAA-9BA9-454170412F13">
+                  <SHORT-NAME>AirMixIn_InitEvent</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/AirMixIn/AirMixIn_InternalBehavior/initAirMix</START-ON-EVENT-REF>
+                </INIT-EVENT>
               </EVENTS>
               <RUNNABLES>
                 <RUNNABLE-ENTITY UUID="8FF70A11-3C4C-47E6-8F66-3C7DD17E5258">
                   <SHORT-NAME>flapsPosPoll</SHORT-NAME>
                   <DATA-SEND-POINTS>
                     <VARIABLE-ACCESS UUID="0D6FCA9E-3713-4233-88C3-38959250801C">
+                      <SHORT-NAME>SEND_FlapSettingPercent_flapSettingPercent</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirMixIn/FlapSettingPercent</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnaloguePercent/flapSettingPercent</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="04D704B3-7243-4E78-A73C-BA48D1BD67F7">
+                  <SHORT-NAME>initAirMix</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:RunnableKind">
+                        <SD>InitRunnable</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="45F469B1-791E-45EA-A09E-FC078B50785E">
                       <SHORT-NAME>SEND_FlapSettingPercent_flapSettingPercent</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
