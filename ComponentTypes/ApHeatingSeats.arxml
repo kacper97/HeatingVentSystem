@@ -54,10 +54,27 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</PROVIDED-INTERFACE-TREF>
             </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="3AF1B426-434E-457E-A789-029FD8DF3C62">
+              <SHORT-NAME>currentSpeed</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/AnalogueIO/speed</DATA-ELEMENT-REF>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/AnalogueIO</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
-            <SW-COMPONENT-PROTOTYPE UUID="51325A73-E50C-4A98-B98F-7DBD137866DF">
-              <SHORT-NAME>HeatedSeatsOut</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="E29998D5-4DFF-4D3D-A569-4D5757602FC4">
+              <SHORT-NAME>HeatedSeatsDriverCtrl</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -65,10 +82,10 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/HeatedSeatsOut</TYPE-TREF>
+              <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ComponentTypes/SeatController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="377CA009-7C5E-43D2-89D2-98BF0F2424B2">
-              <SHORT-NAME>HeatedSeats</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="990D5A3F-E5CA-43FC-8855-FAA975821BF7">
+              <SHORT-NAME>HeatedSeatsPassengerCtrl</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -76,49 +93,69 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/HeatedSeats</TYPE-TREF>
+              <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ComponentTypes/SeatController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
-            <DELEGATION-SW-CONNECTOR UUID="18CBEDBC-838C-4135-A42C-115982524C5A">
-              <SHORT-NAME>PassengerSeatsOnOff_HeatedSeatsOut_heatedSeatsOnOff</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="CCB13357-90AD-4904-AE65-E0394B5887FB">
+              <SHORT-NAME>PassengerSeatsOnOff_HeatedSeatsDriverCtrl_PassengerSeatsOnOff</SHORT-NAME>
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatedSeatsOut/heatedSeatsOnOff</TARGET-R-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsDriverCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/SeatsOnOff</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/PassengerSeatsOnOff</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="668FEAFE-34B8-4AA0-8DE8-7513154FB06F">
-              <SHORT-NAME>DriverSeatsOnOff_HeatedSeatsOut_heatedSeatsOnOff</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatedSeatsOut/heatedSeatsOnOff</TARGET-R-PORT-REF>
-                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/DriverSeatsOnOff</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="252D3CEB-AF2E-4D3E-BD16-2DDFDB5FAF12">
-              <SHORT-NAME>HeatedSeats_heatedSeatsOnOff_passengerHeatSetOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="B6710DBA-CDA4-4F00-8CD7-8B103EBF82BF">
+              <SHORT-NAME>HeatedSeatsDriverCtrl_heatedSeatsOnOff_passengerHeatSetOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeats</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatedSeats/heatedSeatsOnOff</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsDriverCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/SeatController/heatedSeatsOnOff</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/passengerHeatSetOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="E65B0768-4E24-4267-8FB8-8E6F290D042B">
-              <SHORT-NAME>HeatedSeats_heatedSeatsOnOff_driverSeatHeatOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="EF1AB73D-DF81-44A0-9EA7-EDB22F6F63A0">
+              <SHORT-NAME>DriverSeatsOnOff_HeatedSeatsPassengerCtrl_SeatsOnOff</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsPassengerCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/SeatsOnOff</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/DriverSeatsOnOff</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="576C7B29-09A0-4567-8121-B4947820D541">
+              <SHORT-NAME>HeatedSeatsPassengerCtrl_heatedSeatsOnOff_driverSeatHeatOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeats</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatedSeats/heatedSeatsOnOff</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsPassengerCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/SeatController/heatedSeatsOnOff</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/driverSeatHeatOut</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="9767E5F1-6679-49A3-A73A-E00D52163E81">
+              <SHORT-NAME>currentSpeed_HeatedSeatsDriverCtrl_speedIn</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsDriverCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/speedIn</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/currentSpeed</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="0AD2A9DC-2504-4C08-BF8A-EB8A86DE81BF">
+              <SHORT-NAME>currentSpeed_HeatedSeatsPassengerCtrl_speedIn</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/HeatedSeatsPassengerCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SeatController/speedIn</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApHeatingSeats/currentSpeed</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
           </CONNECTORS>
         </COMPOSITION-SW-COMPONENT-TYPE>

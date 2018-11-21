@@ -7,11 +7,11 @@ This file was saved with a tool from Vector Informatik GmbH
     <AR-PACKAGE UUID="0358B630-52F9-4AD1-B1BC-0749CAA34F45">
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
-        <APPLICATION-SW-COMPONENT-TYPE UUID="D9314D77-2A8E-47C3-A1ED-DF5360A31FA8">
-          <SHORT-NAME>Temp</SHORT-NAME>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="C8F9DBAB-78A3-4C55-B372-5181E4853DA6">
+          <SHORT-NAME>CabinTempClosedLoopAtomic</SHORT-NAME>
           <PORTS>
-            <P-PORT-PROTOTYPE UUID="B5BC9BD7-C116-4389-91AF-6482A5CA9223">
-              <SHORT-NAME>temp</SHORT-NAME>
+            <P-PORT-PROTOTYPE UUID="98A33494-D46F-477D-9E5E-608577EC36C6">
+              <SHORT-NAME>tempObt</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -21,7 +21,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <PROVIDED-COM-SPECS>
                 <NONQUEUED-SENDER-COM-SPEC>
-                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
                   <INIT-VALUE>
                     <NUMERICAL-VALUE-SPECIFICATION>
                       <VALUE>0</VALUE>
@@ -29,7 +29,7 @@ This file was saved with a tool from Vector Informatik GmbH
                   </INIT-VALUE>
                 </NONQUEUED-SENDER-COM-SPEC>
                 <NONQUEUED-SENDER-COM-SPEC>
-                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
                   <INIT-VALUE>
                     <NUMERICAL-VALUE-SPECIFICATION>
                       <VALUE>0</VALUE>
@@ -41,37 +41,37 @@ This file was saved with a tool from Vector Informatik GmbH
             </P-PORT-PROTOTYPE>
           </PORTS>
           <INTERNAL-BEHAVIORS>
-            <SWC-INTERNAL-BEHAVIOR UUID="98554E4F-A109-4528-9D68-92FD0C2A46D9">
-              <SHORT-NAME>Temp_InternalBehavior</SHORT-NAME>
+            <SWC-INTERNAL-BEHAVIOR UUID="682CE168-5939-4B87-B11A-47869D3DE54D">
+              <SHORT-NAME>CabinTempClosedLoopAtomic_InternalBehavior</SHORT-NAME>
               <DATA-TYPE-MAPPING-REFS>
                 <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/tempMapSet</DATA-TYPE-MAPPING-REF>
               </DATA-TYPE-MAPPING-REFS>
               <EVENTS>
-                <TIMING-EVENT UUID="1EF507AF-21DE-4F7B-B9BF-40177E2C71F2">
-                  <SHORT-NAME>TMT_Write</SHORT-NAME>
-                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/Temp/Temp_InternalBehavior/Write</START-ON-EVENT-REF>
+                <TIMING-EVENT UUID="F7F2FCD1-BA8B-4D45-8CAC-C51B348D17FD">
+                  <SHORT-NAME>TMT_run</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/CabinTempClosedLoopAtomic/CabinTempClosedLoopAtomic_InternalBehavior/run</START-ON-EVENT-REF>
                   <PERIOD>0.02</PERIOD>
                 </TIMING-EVENT>
               </EVENTS>
               <RUNNABLES>
-                <RUNNABLE-ENTITY UUID="78D6704D-06E1-4168-8456-0CEDCBA5BB22">
-                  <SHORT-NAME>Write</SHORT-NAME>
+                <RUNNABLE-ENTITY UUID="7242322C-9823-4557-A761-2E19C65E65D7">
+                  <SHORT-NAME>run</SHORT-NAME>
                   <DATA-SEND-POINTS>
-                    <VARIABLE-ACCESS UUID="9CC8D455-81F0-4375-B705-450F15EE9C6A">
-                      <SHORT-NAME>SEND_temp_tempOut</SHORT-NAME>
+                    <VARIABLE-ACCESS UUID="A28DA9F0-C3AC-4DEC-8FE2-D4F4FED5F6AB">
+                      <SHORT-NAME>SEND_tempObt_tempIn</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Temp/temp</PORT-PROTOTYPE-REF>
-                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
-                    <VARIABLE-ACCESS UUID="A125BBB7-6FD0-428B-8D66-453A1F35CA3A">
-                      <SHORT-NAME>SEND_temp_tempIn</SHORT-NAME>
+                    <VARIABLE-ACCESS UUID="451E739D-0677-4BF3-A0C9-083424861A78">
+                      <SHORT-NAME>SEND_tempObt_tempOut</SHORT-NAME>
                       <ACCESSED-VARIABLE>
                         <AUTOSAR-VARIABLE-IREF>
-                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Temp/temp</PORT-PROTOTYPE-REF>
-                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</TARGET-DATA-PROTOTYPE-REF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</TARGET-DATA-PROTOTYPE-REF>
                         </AUTOSAR-VARIABLE-IREF>
                       </ACCESSED-VARIABLE>
                     </VARIABLE-ACCESS>
@@ -81,9 +81,9 @@ This file was saved with a tool from Vector Informatik GmbH
             </SWC-INTERNAL-BEHAVIOR>
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
-        <SWC-IMPLEMENTATION UUID="4CB67285-7685-460D-B70C-B280846C04E2">
-          <SHORT-NAME>Temp_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/Temp/Temp_InternalBehavior</BEHAVIOR-REF>
+        <SWC-IMPLEMENTATION UUID="2B6EB80D-882C-4EDF-9820-5B106D4D1B36">
+          <SHORT-NAME>CabinTempClosedLoopAtomic_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/CabinTempClosedLoopAtomic/CabinTempClosedLoopAtomic_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

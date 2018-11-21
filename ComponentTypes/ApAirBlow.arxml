@@ -34,7 +34,7 @@ This file was saved with a tool from Vector Informatik GmbH
             </P-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
-            <SW-COMPONENT-PROTOTYPE UUID="FE4CA10D-5996-44E3-830A-F36EA868EDFD">
+            <SW-COMPONENT-PROTOTYPE UUID="809CFBBA-1527-4D73-AFF1-5A52AB4FEFB9">
               <SHORT-NAME>AirBlow</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
@@ -43,37 +43,26 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirBlow</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="3A5675FE-C95E-4057-8C7F-AC38858C289D">
-              <SHORT-NAME>AirBlowOut</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirBlowOut</TYPE-TREF>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirBlowController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
-            <DELEGATION-SW-CONNECTOR UUID="BD665A04-9EDA-43BA-A05E-AF50F0EF7A73">
-              <SHORT-NAME>airBlowIn_AirBlowOut_pwmBlowerSpeedOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="02E0BE89-894C-4A76-9652-9C3E60D736BD">
+              <SHORT-NAME>airBlowIn_AirBlow_airBlowIn</SHORT-NAME>
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApAirBlow/AirBlowOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirBlowOut/pwmBlowerSpeedOut</TARGET-R-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApAirBlow/AirBlow</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirBlowController/airBlowIn</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApAirBlow/airBlowIn</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="B2E4B327-B692-4855-BB8D-7181F0B477C5">
-              <SHORT-NAME>AirBlow_PWMBlowerMotorSpeed_PWMAirBlowOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="47A1B98E-2F72-46EB-8553-51BBEF863AE0">
+              <SHORT-NAME>AirBlow_AirBlowOut_PWMAirBlowOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApAirBlow/AirBlow</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirBlow/PWMBlowerMotorSpeed</TARGET-P-PORT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirBlowController/AirBlowOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApAirBlow/PWMAirBlowOut</OUTER-PORT-REF>

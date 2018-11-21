@@ -104,4 +104,28 @@
 		<ARXML>ComponentTypes/Start.arxml</ARXML>
 		<DVG>ComponentTypes/Start.dvg</DVG>
 	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/Controller.arxml</ARXML>
+		<DVG>ComponentTypes/Controller.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/FaceFootVent.arxml</ARXML>
+		<DVG>ComponentTypes/FaceFootVent.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/AirBlowController.arxml</ARXML>
+		<DVG>ComponentTypes/AirBlowController.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/FlapController.arxml</ARXML>
+		<DVG>ComponentTypes/FlapController.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/CabinTempController.arxml</ARXML>
+		<DVG>ComponentTypes/CabinTempController.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/CabinTempClosedLoopAtomic.arxml</ARXML>
+		<DVG>ComponentTypes/CabinTempClosedLoopAtomic.dvg</DVG>
+	</FILEREF>
 </DCF>

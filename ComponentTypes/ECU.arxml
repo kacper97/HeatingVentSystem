@@ -209,7 +209,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/AnalogueIO</PROVIDED-INTERFACE-TREF>
             </P-PORT-PROTOTYPE>
             <P-PORT-PROTOTYPE UUID="6B0030B0-7607-48E2-B541-6F1253060F2F">
-              <SHORT-NAME>cabinDriverTemp</SHORT-NAME>
+              <SHORT-NAME>DriverTempOut</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -217,6 +217,14 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
               <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
             </P-PORT-PROTOTYPE>
             <P-PORT-PROTOTYPE UUID="F66533CB-B142-4C23-8BDA-60458D712FB9">
@@ -296,28 +304,6 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/AnaloguePercent</REQUIRED-INTERFACE-TREF>
             </R-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="36FA9987-6477-42AC-A5F6-69F27860E42B">
-              <SHORT-NAME>cabinPassengerTemp</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
-            </P-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="6D3299BD-3C59-481E-966E-0E31C2402C06">
-              <SHORT-NAME>currentPassengerTempSet</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
-            </P-PORT-PROTOTYPE>
             <R-PORT-PROTOTYPE UUID="DE81A8FC-1A39-42B5-AF6A-E26EF1A5A30E">
               <SHORT-NAME>PassengerTemp</SHORT-NAME>
               <ADMIN-DATA>
@@ -329,8 +315,8 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
             </R-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="3AC40D59-25D8-44B6-AA4F-A8AC8C3DE28E">
-              <SHORT-NAME>currentDriverTempSet</SHORT-NAME>
+            <P-PORT-PROTOTYPE UUID="B8A2B5D5-0461-4131-AD03-839832802B84">
+              <SHORT-NAME>PassengerTempOut</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -338,8 +324,58 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
               <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
             </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="7BBCF20C-ACDA-4D37-A0A6-820D491DC7BD">
+              <SHORT-NAME>driverTempSet</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="C5B32267-356D-498F-8FE7-F18FBEFD6A7A">
+              <SHORT-NAME>passengerTempSet</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempIn</DATA-ELEMENT-REF>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/TempAnaloguePort/tempOut</DATA-ELEMENT-REF>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
             <SW-COMPONENT-PROTOTYPE UUID="C0E2DA4B-C0E8-4B19-88DC-BECDED155045">
@@ -544,7 +580,7 @@ This file was saved with a tool from Vector Informatik GmbH
                   <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/cabinDriverTempOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/cabinDriverTemp</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/DriverTempOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
             <DELEGATION-SW-CONNECTOR UUID="2507E5E4-985D-4325-997D-D845ED128445">
               <SHORT-NAME>Input_AnalogueIO_1_PWMAirBlowOutput</SHORT-NAME>
@@ -626,16 +662,6 @@ This file was saved with a tool from Vector Informatik GmbH
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/FaceFootIn</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="2BED04C0-7A27-457F-9D1D-886B2C62AB96">
-              <SHORT-NAME>Input_cabinPassengerTempOut_cabinPassengerTemp</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ECU/Input</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/cabinPassengerTempOut</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/cabinPassengerTemp</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
             <DELEGATION-SW-CONNECTOR UUID="37C486CE-8FA9-4D5C-8B5B-E8746CDB8073">
               <SHORT-NAME>speed_Inputs_speed</SHORT-NAME>
               <INNER-PORT-IREF>
@@ -646,27 +672,51 @@ This file was saved with a tool from Vector Informatik GmbH
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/speed</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="B4AB215C-15EC-4F4C-94D1-3281CB606A61">
-              <SHORT-NAME>Input_DriverTempSet_currentPassengerTempSet</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="6B73FB5D-F3E1-4609-A223-CA07059137EA">
+              <SHORT-NAME>speed_Input_speed</SHORT-NAME>
               <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ECU/Input</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/DriverTempSet</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/speed</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/currentPassengerTempSet</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/speed</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="1BEF5CDD-9E7F-41C2-A1AA-0CC9F445C6EE">
-              <SHORT-NAME>Input_passengerTempSet_currentDriverTempSet</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="CBA07FA9-8058-4D62-B5B8-4B86AE75857C">
+              <SHORT-NAME>Input_cabinPassengerTempOut_PassengerTempOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
                   <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ECU/Input</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/passengerTempSet</TARGET-P-PORT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/cabinPassengerTempOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/currentDriverTempSet</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/PassengerTempOut</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="46437547-5FE0-419C-B82A-7D0CD60F77CF">
+              <SHORT-NAME>driverTempSet_Input_DriverTempSet</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ECU/Input</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/DriverTempSet</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/driverTempSet</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="05D1E514-7E08-4250-AAE2-90CC67D2DE15">
+              <SHORT-NAME>passengerTempSet_Input_passengerTempSet</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ECU/Input</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/HeatingVariables/passengerTempSet</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/passengerTempSet</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
           </CONNECTORS>
+          <DATA-TYPE-MAPPING-REFS>
+            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
+            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/ComponentTypes/DataTypeMappingSets/speedMapSet</DATA-TYPE-MAPPING-REF>
+          </DATA-TYPE-MAPPING-REFS>
         </COMPOSITION-SW-COMPONENT-TYPE>
       </ELEMENTS>
     </AR-PACKAGE>

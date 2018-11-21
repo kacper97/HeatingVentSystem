@@ -54,7 +54,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
             </P-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="088D85F1-CE03-4ED4-8FF0-7CEFA51A25AF">
+            <R-PORT-PROTOTYPE UUID="088D85F1-CE03-4ED4-8FF0-7CEFA51A25AF">
               <SHORT-NAME>PassengertemperatureSet</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
@@ -63,9 +63,9 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
-            </P-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="70B99841-49D6-4B67-9D02-29800BE2CD30">
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="70B99841-49D6-4B67-9D02-29800BE2CD30">
               <SHORT-NAME>DriverTempSet</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
@@ -74,12 +74,12 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-INTERFACE-TREF>
-            </P-PORT-PROTOTYPE>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
-            <SW-COMPONENT-PROTOTYPE UUID="88607FB4-CFF1-4D66-A4C5-6EEDEEDE39AA">
-              <SHORT-NAME>CabinTempClosedLoop</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="39264670-1918-4180-B3F6-0CD72568592F">
+              <SHORT-NAME>Driver</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -87,69 +87,80 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempClosedLoop</TYPE-TREF>
+              <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempController</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="1F8F5729-0AD7-4385-AF6F-BFE5FAF50740">
+              <SHORT-NAME>Passenger</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
-            <DELEGATION-SW-CONNECTOR UUID="40847E06-A12D-4122-9D1E-34756D2063BD">
-              <SHORT-NAME>CurrentPassengerTemp_CabinTempClosedLoop_currentTempSet</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="46301925-465A-4F8F-85C1-A011D74270F7">
+              <SHORT-NAME>CurrentDriverTemp_Driver_currentTemp</SHORT-NAME>
               <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentPassengerTemp</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="D429B917-885B-4EA3-9D75-2437D01C2ABF">
-              <SHORT-NAME>CurrentDriverTemp_CabinTempClosedLoop_currentTempSet</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Driver</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/currentTemp</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentDriverTemp</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="56219906-AF07-46A7-B818-AC8C5F8EDC0A">
-              <SHORT-NAME>CabinTempClosedLoop_currentTempSet_CurrentDriverTempOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="56E35912-BA98-4CB5-BB38-9203FC459D67">
+              <SHORT-NAME>CurrentPassengerTemp_Passenger_currentTemp</SHORT-NAME>
               <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Passenger</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/currentTemp</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentDriverTempOut</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentPassengerTemp</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="BA8DFBE7-E41B-4827-A96F-09C275B38D5E">
-              <SHORT-NAME>CabinTempClosedLoop_currentTempSet_CurrentPassengerTempOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="6F8FE99C-9CF0-4D6D-8B60-728362468431">
+              <SHORT-NAME>Passenger_tempOut_CurrentPassengerTempOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Passenger</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/tempOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentPassengerTempOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="DB4799B5-50C5-4E93-BABF-F7AA4AFCE17C">
-              <SHORT-NAME>CabinTempClosedLoop_currentTempSet_DriverTempSet</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="92F09D06-C502-4421-B6A7-A0A7C9A8B26A">
+              <SHORT-NAME>Driver_tempOut_CurrentDriverTempOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Driver</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/tempOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/DriverTempSet</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CurrentDriverTempOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="A4BE0EEF-380D-4B8D-B74A-2D89F434083F">
-              <SHORT-NAME>CabinTempClosedLoop_currentTempSet_PassengertemperatureSet</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="59107AC4-887C-4E51-B0B4-FEABC1C8DF8D">
+              <SHORT-NAME>DriverTempSet_Driver_setTemp</SHORT-NAME>
               <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/CabinTempClosedLoop</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Driver</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/setTemp</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/PassengertemperatureSet</OUTER-PORT-REF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/DriverTempSet</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="7302DBED-01D5-4621-AE8D-B300686297CA">
+              <SHORT-NAME>PassengertemperatureSet_Passenger_setTemp</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/APDesiredTemp/Passenger</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempController/setTemp</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/APDesiredTemp/PassengertemperatureSet</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
           </CONNECTORS>
         </COMPOSITION-SW-COMPONENT-TYPE>

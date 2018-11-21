@@ -100,8 +100,8 @@ This file was saved with a tool from Vector Informatik GmbH
             </P-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
-            <SW-COMPONENT-PROTOTYPE UUID="B0BCF626-FCD9-4A00-BF74-DEC8A1D07144">
-              <SHORT-NAME>AirMixIn</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="4C4402F6-99E5-4D3F-8B2E-BFC7F1C7B30F">
+              <SHORT-NAME>Flaps</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -109,100 +109,89 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirMixIn</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="2B5A7F8F-6422-4601-8B5B-C7B2DC0FE7A8">
-              <SHORT-NAME>AirMixOut</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirMixOut</TYPE-TREF>
+              <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ComponentTypes/FlapController</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
-            <DELEGATION-SW-CONNECTOR UUID="294F5685-D231-4870-9E30-FA7A1591D4E6">
-              <SHORT-NAME>HotColdPassengerFlapIn_AirMixOut_InputPercentageStepper</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
-                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/HotColdPassengerFlapIn</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="50963C43-1D41-444B-8A2B-96D790DE7B1A">
-              <SHORT-NAME>FaceFootFlapIn_AirMixOut_InputPercentageStepper</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
-                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceFootFlapIn</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="43E14547-565E-4B6F-BA44-03D533155B49">
-              <SHORT-NAME>HotColdDriverFlapIn_AirMixOut_InputPercentageStepper</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
-                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/HotColdDriverFlapIn</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="6A9BA9BF-BAE2-441E-ABF5-2CEE50F6318A">
-              <SHORT-NAME>FaceVentFlapIn_AirMixOut_InputPercentageStepper</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
-                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceVentFlapIn</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="A1A74A50-255F-42C4-923F-2D99B416014B">
-              <SHORT-NAME>AirMixIn_FlapSettingPercent_FaceFootOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="9811B558-4635-468C-BBA5-330F4A0CEC77">
+              <SHORT-NAME>Flaps_HotColdPassOut_hotColdPassengerOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixIn</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirMixIn/FlapSettingPercent</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceFootOut</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="84829EAB-F6ED-41F8-9DD3-84C0D75F4198">
-              <SHORT-NAME>AirMixIn_FlapSettingPercent_hotColdDriverOut</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixIn</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirMixIn/FlapSettingPercent</TARGET-P-PORT-REF>
-                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
-              </INNER-PORT-IREF>
-              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/hotColdDriverOut</OUTER-PORT-REF>
-            </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="A4D530CB-C3B9-4AD3-9E6A-594035022154">
-              <SHORT-NAME>AirMixIn_FlapSettingPercent_hotColdPassengerOut</SHORT-NAME>
-              <INNER-PORT-IREF>
-                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixIn</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirMixIn/FlapSettingPercent</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FlapController/HotColdPassOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/hotColdPassengerOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="BCB22D9F-ABC9-48E7-8644-E0C49846CE78">
-              <SHORT-NAME>AirMixIn_FlapSettingPercent_FaceVentOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="5C230759-7F64-40A3-B48F-028F9A608C4D">
+              <SHORT-NAME>Flaps_HotColdDriverOut_hotColdDriverOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/AirMixIn</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirMixIn/FlapSettingPercent</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FlapController/HotColdDriverOut</TARGET-P-PORT-REF>
+                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/hotColdDriverOut</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="56CE41C3-068A-4456-892C-D074C2E66BAA">
+              <SHORT-NAME>Flaps_FaceFootOut_FaceFootOut</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FlapController/FaceFootOut</TARGET-P-PORT-REF>
+                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceFootOut</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="F9DE1804-56CB-4C17-84FF-02E3EC82CCED">
+              <SHORT-NAME>Flaps_FaceVentOut_FaceVentOut</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FlapController/FaceVentOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceVentOut</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="9C156217-DF5C-4C73-AF12-D1D97BB80802">
+              <SHORT-NAME>FaceFootFlapIn_Flaps_FaceFoot</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FlapController/FaceFoot</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceFootFlapIn</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="B3875F10-B127-4213-A536-D5A98F215731">
+              <SHORT-NAME>HotColdDriverFlapIn_Flaps_HotColdDri</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FlapController/HotColdDri</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/HotColdDriverFlapIn</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="EB011FE2-4D28-462E-83A9-AF3F5B4BB801">
+              <SHORT-NAME>HotColdPassengerFlapIn_Flaps_HotColdPass</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FlapController/HotColdPass</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/HotColdPassengerFlapIn</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="C07A748B-9268-474D-AD35-F4F6B29C0D16">
+              <SHORT-NAME>FaceVentFlapIn_Flaps_FaceVent</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/ApFlapsDir/Flaps</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FlapController/FaceVent</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ApFlapsDir/FaceVentFlapIn</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
           </CONNECTORS>
         </COMPOSITION-SW-COMPONENT-TYPE>

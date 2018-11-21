@@ -78,8 +78,8 @@ This file was saved with a tool from Vector Informatik GmbH
             </P-PORT-PROTOTYPE>
           </PORTS>
           <COMPONENTS>
-            <SW-COMPONENT-PROTOTYPE UUID="CC01A07A-B5C7-40BB-96D4-C08C343F8A9A">
-              <SHORT-NAME>Switch</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="553737F7-E06B-403A-8003-2E67C2098864">
+              <SHORT-NAME>FaceFootVent</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -87,77 +87,66 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/Switch</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="323393F9-44FB-4B6B-9051-F0E9C15C08C7">
-              <SHORT-NAME>SwitchOut</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/SwitchOut</TYPE-TREF>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/FaceFootVentCtrl</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
-            <DELEGATION-SW-CONNECTOR UUID="0D7C07ED-EA1E-4AC6-9655-688271231F4D">
-              <SHORT-NAME>windowSet_SwitchOut_switchIn</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="633038AF-E8BD-402E-9D6A-F59E79D2A800">
+              <SHORT-NAME>windowSet_FaceFootVent_window</SHORT-NAME>
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/SwitchOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SwitchOut/switchIn</TARGET-R-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/window</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/windowSet</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="9B0564C2-672D-4512-A024-8839134A51CE">
-              <SHORT-NAME>foot_SwitchOut_switchIn</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="922A9950-5FDA-4BEC-A285-F3412FBECF3B">
+              <SHORT-NAME>foot_FaceFootVent_foot</SHORT-NAME>
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/SwitchOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SwitchOut/switchIn</TARGET-R-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/foot</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/foot</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="1B70365F-AC53-40D5-B80A-6CA90E8FA529">
-              <SHORT-NAME>face_SwitchOut_switchIn</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="8E5E562C-1D44-4493-B2ED-510BA67A369D">
+              <SHORT-NAME>face_FaceFootVent_face</SHORT-NAME>
               <INNER-PORT-IREF>
                 <R-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/SwitchOut</CONTEXT-COMPONENT-REF>
-                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/SwitchOut/switchIn</TARGET-R-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/face</TARGET-R-PORT-REF>
                 </R-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirDirection/face</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="EE3E3D64-EB45-44A3-9299-971CF51499BC">
-              <SHORT-NAME>Switch_DialSet_FaceButtonOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="159C86C2-87FA-4B70-87D9-248A0320408B">
+              <SHORT-NAME>FaceFootVent_faceOut_FaceButtonOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/Switch</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/faceOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/FaceButtonOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="76C8ED14-22CC-4F80-A4AE-7FBECCC386EC">
-              <SHORT-NAME>Switch_DialSet_WindowButtonOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="B1E1073D-3F95-457C-93E1-BDC7E0AFF081">
+              <SHORT-NAME>FaceFootVent_windowOut_WindowButtonOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/Switch</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/windowOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/WindowButtonOut</OUTER-PORT-REF>
             </DELEGATION-SW-CONNECTOR>
-            <DELEGATION-SW-CONNECTOR UUID="F71728C1-5929-4FB9-8CA5-CD5BDE0B5298">
-              <SHORT-NAME>Switch_DialSet_footButtonOut</SHORT-NAME>
+            <DELEGATION-SW-CONNECTOR UUID="5C759D86-45F5-4B49-B414-A7073A7422E1">
+              <SHORT-NAME>FaceFootVent_footOut_footButtonOut</SHORT-NAME>
               <INNER-PORT-IREF>
                 <P-PORT-IN-COMPOSITION-INSTANCE-REF>
-                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/Switch</CONTEXT-COMPONENT-REF>
-                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/AirDirection/FaceFootVent</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/FaceFootVentCtrl/footOut</TARGET-P-PORT-REF>
                 </P-PORT-IN-COMPOSITION-INSTANCE-REF>
               </INNER-PORT-IREF>
               <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirDirection/footButtonOut</OUTER-PORT-REF>

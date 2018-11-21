@@ -210,17 +210,6 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/TempOut</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="8FCE4B34-AB52-4043-8020-433D74861CA6">
-              <SHORT-NAME>SADriverCabinTempOut</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/TempOut</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
             <SW-COMPONENT-PROTOTYPE UUID="D18E7F92-BFF0-4AED-9368-DA61BEB56C19">
               <SHORT-NAME>SAHeatedDriverSeatsOut</SHORT-NAME>
               <ADMIN-DATA>
@@ -242,28 +231,6 @@ This file was saved with a tool from Vector Informatik GmbH
                 </SDGS>
               </ADMIN-DATA>
               <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/HeatedSeatsOut</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="8ACAB4C8-F7A7-4BC8-8133-5986D975809F">
-              <SHORT-NAME>SADriverCabinTemp</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/Temp</TYPE-TREF>
-            </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="CCA8D95B-120A-40D2-BEE8-8B30F932F6BC">
-              <SHORT-NAME>SAPassengerCabinTemp</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/Temp</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
             <SW-COMPONENT-PROTOTYPE UUID="51968314-0162-476D-A617-1FBADAAC2811">
               <SHORT-NAME>faceDir</SHORT-NAME>
@@ -342,8 +309,8 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/AirMixIn</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
-            <SW-COMPONENT-PROTOTYPE UUID="F2D841E6-802A-4A45-8183-8492775A63A6">
-              <SHORT-NAME>SAPassengerCabinTempOut</SHORT-NAME>
+            <SW-COMPONENT-PROTOTYPE UUID="97C44E07-937B-492B-9053-CF044478D5FC">
+              <SHORT-NAME>CabinClosedLoopIn</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -351,7 +318,40 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/TempOut</TYPE-TREF>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempClosedLoopAtomic</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="ABE72658-CBA5-4F22-A386-183898DB55BB">
+              <SHORT-NAME>CabinClosedLoopInDriver</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempClosedLoopAtomic</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="E07CB6B2-D69D-4724-9EC6-03CECBC24B00">
+              <SHORT-NAME>CabinClosedLoopInDriverSet</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempClosedLoopAtomic</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="820A8713-6075-49F9-9501-34CB14950832">
+              <SHORT-NAME>CabinClosedLoopInPassenger</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CabinTempClosedLoopAtomic</TYPE-TREF>
             </SW-COMPONENT-PROTOTYPE>
           </COMPONENTS>
           <CONNECTORS>
@@ -397,33 +397,11 @@ This file was saved with a tool from Vector Informatik GmbH
                 <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="45E4450A-4A32-484A-BE75-AD9861A6AF5A">
-              <SHORT-NAME>SAPassengerCabinTemp_temp_ECU_PassengerTemp</SHORT-NAME>
-              <PROVIDER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAPassengerCabinTemp</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Temp/temp</TARGET-P-PORT-REF>
-              </PROVIDER-IREF>
-              <REQUESTER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/PassengerTemp</TARGET-R-PORT-REF>
-              </REQUESTER-IREF>
-            </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="6B191825-0D22-431C-AAC5-BB86A64FB7A0">
-              <SHORT-NAME>SADriverCabinTemp_temp_ECU_driverTemp</SHORT-NAME>
-              <PROVIDER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SADriverCabinTemp</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Temp/temp</TARGET-P-PORT-REF>
-              </PROVIDER-IREF>
-              <REQUESTER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/driverTemp</TARGET-R-PORT-REF>
-              </REQUESTER-IREF>
-            </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="C10E6020-02DF-4BEC-9AE7-93F8A3F39854">
               <SHORT-NAME>SAFoot_DialSet_ECU_footSet</SHORT-NAME>
               <PROVIDER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAFoot</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/buttonSet</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
@@ -434,7 +412,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <SHORT-NAME>SAWindow_DialSet_ECU_windowSet</SHORT-NAME>
               <PROVIDER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAWindow</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/buttonSet</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
@@ -456,7 +434,7 @@ This file was saved with a tool from Vector Informatik GmbH
               <SHORT-NAME>SAFace_DialSet_ECU_faceSet</SHORT-NAME>
               <PROVIDER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAFace</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/DialSet</TARGET-P-PORT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/Switch/buttonSet</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
@@ -474,17 +452,6 @@ This file was saved with a tool from Vector Informatik GmbH
                 <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/heatedPassengerSeatsOnOff</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="F5765E74-75CC-46F9-9544-0499C8789639">
-              <SHORT-NAME>SAAirBlower_PWMBlowerMotorSpeed_ECU_PWMAirBlowIn</SHORT-NAME>
-              <PROVIDER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAAirBlower</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirBlow/PWMBlowerMotorSpeed</TARGET-P-PORT-REF>
-              </PROVIDER-IREF>
-              <REQUESTER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/PWMAirBlowIn</TARGET-R-PORT-REF>
-              </REQUESTER-IREF>
-            </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="E0B9E097-2D36-493D-B3D6-D0FAB170039B">
               <SHORT-NAME>ECU_hotColdDriver_SAHotColdDriver_InputPercentageStepper</SHORT-NAME>
               <PROVIDER-IREF>
@@ -493,7 +460,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAHotColdDriver</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/FlapSettingPercent</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="FC2AB279-360F-44B1-9532-2BE133790620">
@@ -504,7 +471,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAFaceFoot</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/FlapSettingPercent</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="7983DC58-CEC3-42F4-876C-FF76EB13C9F7">
@@ -515,7 +482,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAHotColdPassenger</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/FlapSettingPercent</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="D24E8D18-C29E-4DC1-9E9A-58B571EDB29C">
@@ -526,18 +493,7 @@ This file was saved with a tool from Vector Informatik GmbH
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAFaceVent</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/InputPercentageStepper</TARGET-R-PORT-REF>
-              </REQUESTER-IREF>
-            </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="A1623990-0B1D-4BB3-8102-1BEE0E1E8A87">
-              <SHORT-NAME>ECU_cabinTemp_SAAverageCabinTemp_temp</SHORT-NAME>
-              <PROVIDER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/cabinDriverTemp</TARGET-P-PORT-REF>
-              </PROVIDER-IREF>
-              <REQUESTER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SADriverCabinTempOut</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/AirMixOut/FlapSettingPercent</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
             <ASSEMBLY-SW-CONNECTOR UUID="ADE8C143-97C0-4F6C-93E1-FF50B75F4E1A">
@@ -650,37 +606,81 @@ This file was saved with a tool from Vector Informatik GmbH
                 <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/FaceFootIn</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="3F5EEF9C-B2CF-42C1-87CC-E0E0283E744E">
-              <SHORT-NAME>ECU_cabinPassengerTemp_SAPassengerCabinTempOut_temp</SHORT-NAME>
+            <ASSEMBLY-SW-CONNECTOR UUID="466481EC-DCF8-4247-B7E1-5E7F9FBD82CB">
+              <SHORT-NAME>SAAirBlower_AirBlowIn_ECU_PWMAirBlowIn</SHORT-NAME>
               <PROVIDER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/cabinPassengerTemp</TARGET-P-PORT-REF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAAirBlower</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/AirBlow/AirBlowIn</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
-                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAPassengerCabinTempOut</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/TempOut/temp</TARGET-R-PORT-REF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/PWMAirBlowIn</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="A2863919-E714-47E1-9C20-CBC2A34C29AD">
-              <SHORT-NAME>ECU_currentPassengerTempSet_SAPassengerCurrentTempSet_currentTempSet</SHORT-NAME>
+            <ASSEMBLY-SW-CONNECTOR UUID="320750FF-350E-4991-94A9-3996D6F7799A">
+              <SHORT-NAME>CabinClosedLoopIn_TempAnaloguePort_ECU_PassengerTemp</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/CabinClosedLoopIn</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/PassengerTemp</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="6A3AE793-E076-488A-B9AD-5EB587563915">
+              <SHORT-NAME>CabinClosedLoopInDriver_TempAnaloguePort_ECU_driverTemp</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/CabinClosedLoopInDriver</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/driverTemp</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="0C54EC08-C127-4E6E-908A-092ADFEA5FCC">
+              <SHORT-NAME>ECU_PassengerTempOut_SAPassengerCurrentTempSet_currentTempSet</SHORT-NAME>
               <PROVIDER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/currentPassengerTempSet</TARGET-P-PORT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/PassengerTempOut</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SAPassengerCurrentTempSet</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
-            <ASSEMBLY-SW-CONNECTOR UUID="394DD44A-95BE-4C10-9F20-249F1CE283B2">
-              <SHORT-NAME>ECU_currentDriverTempSet_SADriverCabinTempSet_currentTempSet</SHORT-NAME>
+            <ASSEMBLY-SW-CONNECTOR UUID="5C52EC82-EEAE-4A5C-B72D-F84200798D76">
+              <SHORT-NAME>ECU_DriverTempOut_SADriverCabinTempSet_currentTempSet</SHORT-NAME>
               <PROVIDER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
-                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/currentDriverTempSet</TARGET-P-PORT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/ECU/DriverTempOut</TARGET-P-PORT-REF>
               </PROVIDER-IREF>
               <REQUESTER-IREF>
                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/SADriverCabinTempSet</CONTEXT-COMPONENT-REF>
-                <TARGET-R-PORT-REF DEST="PR-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-R-PORT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoop/currentTempSet</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="BAF8B8F3-90C8-47AE-99A0-F6069A869A62">
+              <SHORT-NAME>CabinClosedLoopInDriverSet_TempAnaloguePort_ECU_driverTempSet</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/CabinClosedLoopInDriverSet</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/driverTempSet</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="840C758B-2DBA-4F92-B0E8-2A154EACFDBF">
+              <SHORT-NAME>CabinClosedLoopInPassenger_TempAnaloguePort_ECU_passengerTempSet</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/CabinClosedLoopInPassenger</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CabinTempClosedLoopAtomic/tempObt</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/HVAC/ECU</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/ECU/passengerTempSet</TARGET-R-PORT-REF>
               </REQUESTER-IREF>
             </ASSEMBLY-SW-CONNECTOR>
           </CONNECTORS>
