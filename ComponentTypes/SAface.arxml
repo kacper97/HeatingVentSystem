@@ -9,6 +9,19 @@ This file was saved with a tool from Vector Informatik GmbH
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="042B0522-8CFC-464D-8DA4-B1E35959146F">
           <SHORT-NAME>Switch</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="404CA906-25CC-4AF7-BBB7-3288480B375D">
+              <SHORT-NAME>DialSet</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="2D3880CD-A0A9-41BD-897B-FEA630B4290E">
               <SHORT-NAME>Switch_InternalBehavior</SHORT-NAME>

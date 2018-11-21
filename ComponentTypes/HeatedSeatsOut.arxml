@@ -7,11 +7,11 @@ This file was saved with a tool from Vector Informatik GmbH
     <AR-PACKAGE UUID="0358B630-52F9-4AD1-B1BC-0749CAA34F45">
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
-        <APPLICATION-SW-COMPONENT-TYPE UUID="19D252D2-FFD3-4927-8404-B64B8D92FB11">
-          <SHORT-NAME>AirMixOut</SHORT-NAME>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="B2786714-8F9F-42C0-B898-B6040326571B">
+          <SHORT-NAME>HeatedSeatsOut</SHORT-NAME>
           <PORTS>
-            <R-PORT-PROTOTYPE UUID="D015FE74-01A0-4B0D-B2A7-1E417C9DDB2A">
-              <SHORT-NAME>InputPercentageStepper</SHORT-NAME>
+            <R-PORT-PROTOTYPE UUID="2A704E87-52D4-4832-B258-D4167B7FB7EC">
+              <SHORT-NAME>heatedSeatsOnOff</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -19,18 +19,18 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/AnaloguePercent</REQUIRED-INTERFACE-TREF>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</REQUIRED-INTERFACE-TREF>
             </R-PORT-PROTOTYPE>
           </PORTS>
           <INTERNAL-BEHAVIORS>
-            <SWC-INTERNAL-BEHAVIOR UUID="EFFC21BB-CFDA-46A2-8623-A9A162333CEE">
-              <SHORT-NAME>AirMixOut_InternalBehavior</SHORT-NAME>
+            <SWC-INTERNAL-BEHAVIOR UUID="A02D8AC3-9B28-4FA3-8A18-E9CDF539F7C2">
+              <SHORT-NAME>HeatedSeatsOut_InternalBehavior</SHORT-NAME>
             </SWC-INTERNAL-BEHAVIOR>
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
-        <SWC-IMPLEMENTATION UUID="8FE2F227-D518-4A57-BFE7-94B2419DA610">
-          <SHORT-NAME>AirMixOut_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/AirMixOut/AirMixOut_InternalBehavior</BEHAVIOR-REF>
+        <SWC-IMPLEMENTATION UUID="1861143B-0EA1-4F6A-BD4C-E4D242D9BDCA">
+          <SHORT-NAME>HeatedSeatsOut_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/HeatedSeatsOut/HeatedSeatsOut_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

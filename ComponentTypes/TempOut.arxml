@@ -7,11 +7,11 @@ This file was saved with a tool from Vector Informatik GmbH
     <AR-PACKAGE UUID="0358B630-52F9-4AD1-B1BC-0749CAA34F45">
       <SHORT-NAME>ComponentTypes</SHORT-NAME>
       <ELEMENTS>
-        <APPLICATION-SW-COMPONENT-TYPE UUID="19D252D2-FFD3-4927-8404-B64B8D92FB11">
-          <SHORT-NAME>AirMixOut</SHORT-NAME>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="E954AD76-ACEC-4BC6-B4C9-7777A217C03E">
+          <SHORT-NAME>TempOut</SHORT-NAME>
           <PORTS>
-            <R-PORT-PROTOTYPE UUID="D015FE74-01A0-4B0D-B2A7-1E417C9DDB2A">
-              <SHORT-NAME>InputPercentageStepper</SHORT-NAME>
+            <R-PORT-PROTOTYPE UUID="D10D5A6F-D5BA-451F-AC53-37D9895CB87A">
+              <SHORT-NAME>temp</SHORT-NAME>
               <ADMIN-DATA>
                 <SDGS>
                   <SDG GID="DV:DEV">
@@ -19,18 +19,18 @@ This file was saved with a tool from Vector Informatik GmbH
                   </SDG>
                 </SDGS>
               </ADMIN-DATA>
-              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/AnaloguePercent</REQUIRED-INTERFACE-TREF>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</REQUIRED-INTERFACE-TREF>
             </R-PORT-PROTOTYPE>
           </PORTS>
           <INTERNAL-BEHAVIORS>
-            <SWC-INTERNAL-BEHAVIOR UUID="EFFC21BB-CFDA-46A2-8623-A9A162333CEE">
-              <SHORT-NAME>AirMixOut_InternalBehavior</SHORT-NAME>
+            <SWC-INTERNAL-BEHAVIOR UUID="6532EB8B-81C6-49D4-B622-3055EF812382">
+              <SHORT-NAME>TempOut_InternalBehavior</SHORT-NAME>
             </SWC-INTERNAL-BEHAVIOR>
           </INTERNAL-BEHAVIORS>
         </APPLICATION-SW-COMPONENT-TYPE>
-        <SWC-IMPLEMENTATION UUID="8FE2F227-D518-4A57-BFE7-94B2419DA610">
-          <SHORT-NAME>AirMixOut_Implementation</SHORT-NAME>
-          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/AirMixOut/AirMixOut_InternalBehavior</BEHAVIOR-REF>
+        <SWC-IMPLEMENTATION UUID="A9FBC02E-FFBF-4193-A102-CF752FDAE701">
+          <SHORT-NAME>TempOut_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/TempOut/TempOut_InternalBehavior</BEHAVIOR-REF>
         </SWC-IMPLEMENTATION>
       </ELEMENTS>
     </AR-PACKAGE>

@@ -9,6 +9,19 @@ This file was saved with a tool from Vector Informatik GmbH
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="E4C3E2F1-7208-4706-9F87-EEED2620E1F0">
           <SHORT-NAME>HeatedSeats</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="A64959AD-9A5C-4608-87C5-241164982BED">
+              <SHORT-NAME>heatedSeatsOnOff</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="8BCEBF95-D827-42CE-8F1B-2ACF55963C82">
               <SHORT-NAME>HeatedSeats_InternalBehavior</SHORT-NAME>

@@ -9,6 +9,19 @@ This file was saved with a tool from Vector Informatik GmbH
       <ELEMENTS>
         <APPLICATION-SW-COMPONENT-TYPE UUID="B5EAAAC6-0FF6-45EC-9362-BD1E2DBE8D8C">
           <SHORT-NAME>CabinTempClosedLoop</SHORT-NAME>
+          <PORTS>
+            <PR-PORT-PROTOTYPE UUID="8D0A99E4-D00B-443C-9F30-DCE76929E53E">
+              <SHORT-NAME>currentTempSet</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <PROVIDED-REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/TempAnaloguePort</PROVIDED-REQUIRED-INTERFACE-TREF>
+            </PR-PORT-PROTOTYPE>
+          </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="5907C77D-310A-4785-A09C-F09F9C294CDB">
               <SHORT-NAME>CabinTempClosedLoop_InternalBehavior</SHORT-NAME>

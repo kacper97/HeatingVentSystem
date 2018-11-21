@@ -21,17 +21,6 @@ This file was saved with a tool from Vector Informatik GmbH
               </ADMIN-DATA>
               <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</REQUIRED-INTERFACE-TREF>
             </R-PORT-PROTOTYPE>
-            <P-PORT-PROTOTYPE UUID="7B548CB0-7229-413B-9A2D-C0DAF5C6E967">
-              <SHORT-NAME>MotorOnOffOut</SHORT-NAME>
-              <ADMIN-DATA>
-                <SDGS>
-                  <SDG GID="DV:DEV">
-                    <SD GID="DV:ImportModePreset">Keep</SD>
-                  </SDG>
-                </SDGS>
-              </ADMIN-DATA>
-              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/digitalIO</PROVIDED-INTERFACE-TREF>
-            </P-PORT-PROTOTYPE>
           </PORTS>
           <INTERNAL-BEHAVIORS>
             <SWC-INTERNAL-BEHAVIOR UUID="B403A976-8601-48C7-BF58-74AD5AC48490">

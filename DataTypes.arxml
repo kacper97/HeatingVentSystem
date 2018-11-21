@@ -1495,7 +1495,7 @@ For example: 1, 0, 126, +10.</L-2>
           <SW-DATA-DEF-PROPS>
             <SW-DATA-DEF-PROPS-VARIANTS>
               <SW-DATA-DEF-PROPS-CONDITIONAL>
-                <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
                 <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/DataConstrs/minMaxSpeed</DATA-CONSTR-REF>
                 <UNIT-REF DEST="UNIT">/DataTypes/Units/Kilometers</UNIT-REF>
               </SW-DATA-DEF-PROPS-CONDITIONAL>
